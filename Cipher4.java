@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Cipher4 {
     public static void main(String[] args) {
@@ -24,10 +25,10 @@ public class Cipher4 {
     }
 
     private static String encrypt(String input, String baseKey, String encryptionKey) throws Exception {
-        // baseKey and encryptionKey should be equal in length, if not throw an error
-        if (baseKey.length() != encryptionKey.length()) {
+        // Validate keys
+        if (validateKey(baseKey) == false || validateKey(encryptionKey) == false) {
             throw new Exception(
-                    "The keys provided is not equal in length. Please make sure that the provided keys are correct");
+                    "The keys provided are not valid.");
         }
 
         StringBuilder encryptedInputBuilder = new StringBuilder();
@@ -71,5 +72,15 @@ public class Cipher4 {
         }
 
         return keyIndexMap;
+    }
+
+    private static boolean validateKey(String key) {
+        // must not have duplicate characters
+        int distinctCharsCount = (int) key.chars().distinct().count();
+        if(distinctCharsCount != key.length()) {
+            return false;
+        }
+
+        return true;
     }
 }

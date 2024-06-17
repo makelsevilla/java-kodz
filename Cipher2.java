@@ -76,6 +76,8 @@ public class Cipher2 {
     }
 
     private static String decrypt(String text, int shift) {
-        return encrypt(text, 26 - shift);
+        return encrypt(text, -shift);
+        // or
+        // return encrypt(text, 26 - shift);
     }
 }

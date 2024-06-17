@@ -7,13 +7,12 @@ import java.util.Scanner;
 public class FileRW {
 
     public static void main(String[] args) {
-        FileRW filerw = new FileRW();
 
-        filerw.writeFile("./input.txt", "Hello Universe");
-        System.out.println(filerw.readFile("./input.txt"));
+        writeFile("./input.txt", "Hello Universe");
+        System.out.println(readFile("./input.txt"));
     }
 
-    public String readFile(String fileName) {
+    public static String readFile(String fileName) {
         StringBuilder content = new StringBuilder();
 
         try {
@@ -34,7 +33,7 @@ public class FileRW {
         return content.toString().trim();
     }
 
-    public void writeFile(String fileName, String content) {
+    public static void writeFile(String fileName, String content) {
         try {
             FileWriter writer = new FileWriter(fileName);
             writer.write(content);

@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 
 // Wrong solution
-public class Cipher {
+public class CipherNoob {
 
     public static void main(String[] args) {
         ArrayList<String> inputLines = new ArrayList<String>();

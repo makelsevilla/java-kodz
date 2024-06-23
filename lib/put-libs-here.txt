@@ -1,0 +1,1 @@
+external libraries should be added to classpath when running a program in CLI.

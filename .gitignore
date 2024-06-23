@@ -1,3 +1,6 @@
 input.txt
 encrypted.txt
 decrypted.txt
+lib/*
+!lib/put-libs-here.txt
+*.class

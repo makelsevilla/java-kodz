@@ -1,22 +1,13 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 
 public class MyClass {
     public static void main(String[] args) {
         try {
-
-            FileReader myFileReader = new FileReader("input.txt");
-            BufferedReader myBufferedReader = new BufferedReader(myFileReader);
-
-            String content = myBufferedReader.readLine();
-            myBufferedReader.close();
-            myFileReader.close();
-            System.out.println(content);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            System.out.println("ok");
         } catch (Exception e) {
             // TODO: handle exception
-            System.out.println("Error in reading the file.");
-            e.printStackTrace();
+            System.out.println(e);
         }
     }
 }
